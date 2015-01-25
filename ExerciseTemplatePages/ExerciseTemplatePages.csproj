@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F0E622D4-8744-451E-84A6-615980FED110}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExerciseTemplatePages</RootNamespace>
+    <AssemblyName>ExerciseTemplatePages</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Features\ExercisePages\ExercisePages.EventReceiver.cs">
+      <DependentUpon>ExercisePages.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application\Assets\css\font-awesome-4.2.0\fonts\fontawesome-webfont.eot" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\fonts\fontawesome-webfont.ttf" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\fonts\fontawesome-webfont.woff" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\fonts\FontAwesome.otf" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\less\bordered-pulled.less" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\less\core.less" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\less\fixed-width.less" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\less\font-awesome.less" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\less\icons.less" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\less\larger.less" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\less\list.less" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\less\mixins.less" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\less\path.less" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\less\rotated-flipped.less" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\less\spinning.less" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\less\stacked.less" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\less\variables.less" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\scss\font-awesome.scss" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\scss\_bordered-pulled.scss" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\scss\_core.scss" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\scss\_fixed-width.scss" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\scss\_icons.scss" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\scss\_larger.scss" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\scss\_list.scss" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\scss\_mixins.scss" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\scss\_path.scss" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\scss\_rotated-flipped.scss" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\scss\_spinning.scss" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\scss\_stacked.scss" />
+    <None Include="Application\Assets\css\font-awesome-4.2.0\scss\_variables.scss" />
+    <None Include="Application\Assets\js\lib\datatables\images\Sorting icons.psd" />
+    <None Include="Application\Assets\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{968e317d-91ca-46be-bc7b-816161e652b9}</SharePointProjectItemId>
+    </None>
+    <None Include="Application\WebPartPages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4ae2f33f-eb9c-4ac5-aff3-bd3428c89379}</SharePointProjectItemId>
+    </None>
+    <None Include="CustomActions\LinkToEditCustomNavigation\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{54115864-8a7c-4356-bd5f-426a2050cd25}</SharePointProjectItemId>
+    </None>
+    <None Include="CustomListForms\CustomFormsForASR\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3cfc9ecc-ae37-47c4-8952-10aa912fee25}</SharePointProjectItemId>
+    </None>
+    <None Include="CustomListForms\CustomFormsForRFI\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d36ca322-ee40-4b80-94c8-9540b621993e}</SharePointProjectItemId>
+    </None>
+    <None Include="ExerciseMasterPage\exercise-seattle.master" />
+    <None Include="ExerciseMasterPage\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6fa23238-fd65-4680-b5ce-8a24f779d0c0}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\ExercisePages\ExercisePages.feature">
+      <FeatureId>{36228747-c7e2-4ac5-9d32-a4599fca8d90}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Package\Package.package">
+      <PackageId>{cc574f08-ee20-49bd-a95b-2ca374790414}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Application\Assets\css\font-awesome-4.2.0\css\font-awesome.css" />
+    <Content Include="Application\Assets\css\font-awesome-4.2.0\css\font-awesome.min.css" />
+    <Content Include="Application\Assets\css\font-awesome-4.2.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Application\Assets\css\style.css" />
+    <Content Include="Application\Assets\Elements.xml" />
+    <Content Include="Application\Assets\images\ArrowCollapse.gif" />
+    <Content Include="Application\Assets\images\ArrowExpand.gif" />
+    <Content Include="Application\Assets\images\attention16by16_whitebk.gif" />
+    <Content Include="Application\Assets\images\gray_small.png" />
+    <Content Include="Application\Assets\js\app\asr.js" />
+    <Content Include="Application\Assets\js\app\commonUI.js" />
+    <Content Include="Application\Assets\js\app\comms.js" />
+    <Content Include="Application\Assets\js\app\commsTables.js" />
+    <Content Include="Application\Assets\js\app\datacontext.js" />
+    <Content Include="Application\Assets\js\app\editExerciseNav.js" />
+    <Content Include="Application\Assets\js\app\helpDesk.js" />
+    <Content Include="Application\Assets\js\app\masterPageUI.js" />
+    <Content Include="Application\Assets\js\app\missionTracker.js" />
+    <Content Include="Application\Assets\js\app\projection.js" />
+    <Content Include="Application\Assets\js\app\rfi.js" />
+    <Content Include="Application\Assets\js\app\sitreps.js" />
+    <Content Include="Application\Assets\js\common.js" />
+    <Content Include="Application\Assets\js\lib\datatables\css\jquery.dataTables.css" />
+    <Content Include="Application\Assets\js\lib\datatables\css\jquery.dataTables.min.css" />
+    <Content Include="Application\Assets\js\lib\datatables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Application\Assets\js\lib\datatables\images\back_disabled.png" />
+    <Content Include="Application\Assets\js\lib\datatables\images\back_enabled.png" />
+    <Content Include="Application\Assets\js\lib\datatables\images\back_enabled_hover.png" />
+    <Content Include="Application\Assets\js\lib\datatables\images\favicon.ico" />
+    <Content Include="Application\Assets\js\lib\datatables\images\forward_disabled.png" />
+    <Content Include="Application\Assets\js\lib\datatables\images\forward_enabled.png" />
+    <Content Include="Application\Assets\js\lib\datatables\images\forward_enabled_hover.png" />
+    <Content Include="Application\Assets\js\lib\datatables\images\sort_asc.png" />
+    <Content Include="Application\Assets\js\lib\datatables\images\sort_asc_disabled.png" />
+    <Content Include="Application\Assets\js\lib\datatables\images\sort_both.png" />
+    <Content Include="Application\Assets\js\lib\datatables\images\sort_desc.png" />
+    <Content Include="Application\Assets\js\lib\datatables\images\sort_desc_disabled.png" />
+    <Content Include="Application\Assets\js\lib\datatables\js\jquery.dataTables.js" />
+    <Content Include="Application\Assets\js\lib\datatables\js\jquery.dataTables.min.js" />
+    <Content Include="Application\Assets\js\lib\datatables\js\jquery.dataTables.rowGrouping.js" />
+    <Content Include="Application\Assets\js\lib\datatables\js\jquery.js" />
+    <Content Include="Application\Assets\js\lib\date.js" />
+    <Content Include="Application\Assets\js\lib\handlebars-v2.0.0.js" />
+    <Content Include="Application\Assets\js\lib\jquery.min.js" />
+    <Content Include="Application\Assets\js\lib\jquery.SPServices-2014.01.min.js" />
+    <Content Include="Application\Assets\js\lib\jquery.timeago.js" />
+    <Content Include="Application\Assets\js\lib\jqueryGanttView\jquery.ganttView-soceur-custom.js" />
+    <Content Include="Application\Assets\js\lib\jqueryGanttView\jquery.ganttView.css" />
+    <Content Include="Application\Assets\js\lib\jqueryui\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Application\Assets\js\lib\jqueryui\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Application\Assets\js\lib\jqueryui\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Application\Assets\js\lib\jqueryui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Application\Assets\js\lib\jqueryui\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Application\Assets\js\lib\jqueryui\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Application\Assets\js\lib\jqueryui\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Application\Assets\js\lib\jqueryui\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Application\Assets\js\lib\jqueryui\images\ui-icons_222222_256x240.png" />
+    <Content Include="Application\Assets\js\lib\jqueryui\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Application\Assets\js\lib\jqueryui\images\ui-icons_454545_256x240.png" />
+    <Content Include="Application\Assets\js\lib\jqueryui\images\ui-icons_888888_256x240.png" />
+    <Content Include="Application\Assets\js\lib\jqueryui\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Application\Assets\js\lib\jqueryui\jquery-ui.css" />
+    <Content Include="Application\Assets\js\lib\jqueryui\jquery-ui.js" />
+    <Content Include="Application\Assets\js\lib\jqueryui\jquery-ui.min.css" />
+    <Content Include="Application\Assets\js\lib\jqueryui\jquery-ui.min.js" />
+    <Content Include="Application\Assets\js\lib\jqueryui\jquery-ui.structure.css" />
+    <Content Include="Application\Assets\js\lib\jqueryui\jquery-ui.structure.min.css" />
+    <Content Include="Application\Assets\js\lib\jqueryui\jquery-ui.theme.css" />
+    <Content Include="Application\Assets\js\lib\jqueryui\jquery-ui.theme.min.css" />
+    <Content Include="Application\Assets\js\lib\jstree\jstree.js" />
+    <Content Include="Application\Assets\js\lib\jstree\jstree.min.js" />
+    <Content Include="Application\Assets\js\lib\jstree\themes\default-dark\32px.png" />
+    <Content Include="Application\Assets\js\lib\jstree\themes\default-dark\40px.png" />
+    <Content Include="Application\Assets\js\lib\jstree\themes\default-dark\style.css" />
+    <Content Include="Application\Assets\js\lib\jstree\themes\default-dark\style.min.css" />
+    <Content Include="Application\Assets\js\lib\jstree\themes\default-dark\throbber.gif" />
+    <Content Include="Application\Assets\js\lib\jstree\themes\default\32px.png" />
+    <Content Include="Application\Assets\js\lib\jstree\themes\default\40px.png" />
+    <Content Include="Application\Assets\js\lib\jstree\themes\default\style.css" />
+    <Content Include="Application\Assets\js\lib\jstree\themes\default\style.min.css" />
+    <Content Include="Application\Assets\js\lib\jstree\themes\default\throbber.gif" />
+    <Content Include="Application\Assets\js\lib\moment-timezone.js" />
+    <Content Include="Application\Assets\js\lib\moment.min.js" />
+    <Content Include="Application\Assets\js\lib\qtip\jquery.qtip.min.css" />
+    <Content Include="Application\Assets\js\lib\qtip\jquery.qtip.min.js" />
+    <Content Include="Application\Assets\js\lib\query-string.js" />
+    <Content Include="Application\Assets\js\lib\require.js" />
+    <Content Include="Application\Assets\js\lib\underscore.min.js" />
+    <Content Include="Application\Assets\js\lib\verticalPureCssMenu\r_arrow.gif" />
+    <Content Include="Application\Assets\js\lib\verticalPureCssMenu\style.css" />
+    <Content Include="Application\Assets\js\lib\vex\css\vex-theme-bottom-right-corner.css" />
+    <Content Include="Application\Assets\js\lib\vex\css\vex-theme-default.css" />
+    <Content Include="Application\Assets\js\lib\vex\css\vex-theme-flat-attack.css" />
+    <Content Include="Application\Assets\js\lib\vex\css\vex-theme-os.css" />
+    <Content Include="Application\Assets\js\lib\vex\css\vex-theme-plain.css" />
+    <Content Include="Application\Assets\js\lib\vex\css\vex-theme-top.css" />
+    <Content Include="Application\Assets\js\lib\vex\css\vex-theme-wireframe.css" />
+    <Content Include="Application\Assets\js\lib\vex\css\vex.css" />
+    <Content Include="Application\Assets\js\lib\vex\js\build-test-amd.html" />
+    <Content Include="Application\Assets\js\lib\vex\js\build-test.html" />
+    <Content Include="Application\Assets\js\lib\vex\js\vex.combined.min.js" />
+    <Content Include="Application\Assets\js\lib\vex\js\vex.dialog.js" />
+    <Content Include="Application\Assets\js\lib\vex\js\vex.dialog.min.js" />
+    <Content Include="Application\Assets\js\lib\vex\js\vex.js" />
+    <Content Include="Application\Assets\js\lib\vex\js\vex.min.js" />
+    <Content Include="Application\WebPartPages\airAssets.aspx" />
+    <Content Include="Application\WebPartPages\announce.aspx" />
+    <Content Include="Application\WebPartPages\asr.aspx" />
+    <Content Include="Application\WebPartPages\comms.aspx" />
+    <Content Include="Application\WebPartPages\editExerciseNav.aspx" />
+    <Content Include="Application\WebPartPages\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Application\WebPartPages\excon.aspx" />
+    <Content Include="Application\WebPartPages\exDoc.aspx" />
+    <Content Include="Application\WebPartPages\helpDesk.aspx" />
+    <Content Include="Application\WebPartPages\missionTracker.aspx" />
+    <Content Include="Application\WebPartPages\phone.aspx" />
+    <Content Include="Application\WebPartPages\projection.aspx" />
+    <Content Include="Application\WebPartPages\rfi.aspx" />
+    <Content Include="Application\WebPartPages\sitreps.aspx" />
+    <Content Include="Application\WebPartPages\soatg.aspx" />
+    <Content Include="Application\WebPartPages\socc.aspx" />
+    <Content Include="Application\WebPartPages\sotg1.aspx" />
+    <Content Include="Application\WebPartPages\sotg2.aspx" />
+    <Content Include="Application\WebPartPages\sotg3.aspx" />
+    <Content Include="CustomActions\LinkToEditCustomNavigation\Elements.xml" />
+    <Content Include="CustomListForms\CustomFormsForASR\customNewForm.aspx" />
+    <Content Include="CustomListForms\CustomFormsForASR\Elements.xml" />
+    <Content Include="CustomListForms\CustomFormsForASR\newForm.js" />
+    <Content Include="CustomListForms\CustomFormsForRFI\customDispForm.aspx" />
+    <Content Include="CustomListForms\CustomFormsForRFI\customEditForm.aspx" />
+    <Content Include="CustomListForms\CustomFormsForRFI\Elements.xml" />
+    <Content Include="CustomListForms\CustomFormsForRFI\respond.aspx" />
+    <Content Include="CustomListForms\CustomFormsForRFI\sufficient.aspx" />
+    <Content Include="ExerciseMasterPage\Elements.xml" />
+    <Content Include="Features\ExercisePages\ExercisePages.Template.xml">
+      <DependentUpon>ExercisePages.feature</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

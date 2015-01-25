@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="cc574f08-ee20-49bd-a95b-2ca374790414" solutionId="cc574f08-ee20-49bd-a95b-2ca374790414" resetWebServer="false" sharePointProductVersion="15.0" name="ExerciseTemplatePages" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="36228747-c7e2-4ac5-9d32-a4599fca8d90" />
+  </features>
+</package>

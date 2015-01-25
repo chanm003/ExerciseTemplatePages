@@ -1,0 +1,176 @@
+﻿@import url("../js/lib/vex/css/vex.css");
+@import url("../js/lib/vex/css/vex-theme-os.css");
+@import url("../js/lib/datatables/css/jquery.dataTables.css");
+@import url("font-awesome-4.2.0/css/font-awesome.min.css");
+@import url("../js/lib/jqueryui/jquery-ui.min.css");
+@import url("../js/lib/qtip/jquery.qtip.min.css");
+@import url("../js/lib/jstree/themes/default/style.css");
+@import url("../js/lib/jqueryGanttView/jquery.ganttView.css");
+@import url("../js/lib/verticalPureCssMenu/style.css");
+
+
+
+.dataTables_wrapper {
+    /*clear:none;
+    float:left;
+    width: 100%;
+    */
+    margin-bottom: 20px;
+}
+
+.commsStatusTable{
+	margin-bottom: 20px;
+    width: 100%;
+}
+
+.commsStatusTable th {
+    text-align:center;
+}
+
+.commsStatusTable th, .commsStatusTable td{
+    width: 80px;    
+    font-size:1.2em;
+    padding:5px;
+}
+
+.commsStatusTable td.FMC{
+	background-color:green;
+	color:white;
+	font-weight: bold;
+    text-align:center;
+}
+
+.commsStatusTable td.Degraded{
+	background-color:yellow;
+	color:black;
+	font-weight: bold;
+    text-align:center;
+}
+
+.commsStatusTable td.NMC{
+	background-color:red;
+	color:black;
+	font-weight: bold;
+    text-align:center;
+}
+
+.commsStatusTable td.Planned{
+	background-color:navy;
+	color:white;
+	font-weight: bold;
+    text-align:center;
+}
+
+.commsStatusTable td.Standby{
+	background-color: aqua;
+	color:black;
+	font-weight: bold;
+    text-align:center;
+}
+
+.commsStatusTable td.NA{
+	background-color: lightgrey;
+	color:lightgrey;
+	text-align:center;
+}
+
+td.group{
+	background-color: #D1CFD0 !important;
+	
+}
+
+td.expanded-group {
+	/*
+	background: url("/_layouts/images/minus.gif") no-repeat scroll left center transparent;
+	*/
+	padding-left: 15px !important;
+    color: black !important;
+    font-weight: bold !important;
+}
+
+td.collapsed-group {
+	/*
+	background: url("/_layouts/images/plus.gif") no-repeat scroll left center transparent;
+	*/
+	padding-left: 15px !important;
+    color: black !important;
+    font-weight: bold !important;
+}
+
+table.dataTable{
+    padding-top:5px;
+}
+
+.dataTable th, .dataTable th.sorting, .dataTable th.sorting_desc {
+	background-color: #0072c6 !important;
+	color:white;
+}
+
+.dataTable a, .dataTable a:visited {
+    text-decoration: underline;
+}
+
+.webpartsContainer {
+    /*padding used by listview webparts*/
+    padding:0 5px;
+}
+
+.appContainer {
+    padding:0 15px;
+}
+
+.appPart {
+    clear:both;
+    padding-bottom: 25px;
+}
+
+.s4-toplinks, .ms-quicklaunchouter
+{
+    display: none; /* top navigation will be shown via code*/
+}
+
+.custombtn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 14;
+  -moz-border-radius: 14;
+  border-radius: 14px;
+  font-family: Arial;
+  color: #ffffff !important;
+  font-size: 12px;
+  padding: 3px 10px 3px 10px;
+  text-decoration: none !important;
+}
+
+.custombtn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+#DeltaPlaceHolderLeftNavBar{
+    display:none;
+}
+
+
+/*OVERRIDE JQUERY GANTTVIEW START*/
+div.ganttview-vtheader-item-name {
+	display:none;
+}
+
+div.ganttview-vtheader-series-name {
+	width: 235px;
+	height: 31px;
+	border-top: 1px solid #d0d0d0;
+	line-height: 16px;
+	padding-left: 5px;
+}
+/*OVERRIDE JQUERY GANTTVIEW END*/

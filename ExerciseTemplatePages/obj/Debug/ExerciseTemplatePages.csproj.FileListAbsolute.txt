@@ -1,0 +1,5 @@
+c:\users\mike.chan.adm\documents\visual studio 2013\Projects\ExerciseTemplatePages\ExerciseTemplatePages\bin\Debug\ExerciseTemplatePages.dll
+c:\users\mike.chan.adm\documents\visual studio 2013\Projects\ExerciseTemplatePages\ExerciseTemplatePages\bin\Debug\ExerciseTemplatePages.pdb
+c:\users\mike.chan.adm\documents\visual studio 2013\Projects\ExerciseTemplatePages\ExerciseTemplatePages\obj\Debug\ExerciseTemplatePages.dll
+c:\users\mike.chan.adm\documents\visual studio 2013\Projects\ExerciseTemplatePages\ExerciseTemplatePages\obj\Debug\ExerciseTemplatePages.pdb
+C:\Users\mike.chan.adm\documents\visual studio 2013\Projects\ExerciseTemplatePages\ExerciseTemplatePages\obj\Debug\ExerciseTemplatePages.csprojResolveAssemblyReference.cache

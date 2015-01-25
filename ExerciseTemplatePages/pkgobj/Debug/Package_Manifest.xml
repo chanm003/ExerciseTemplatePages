@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution xmlns="http://schemas.microsoft.com/sharepoint/" SolutionId="cc574f08-ee20-49bd-a95b-2ca374790414" SharePointProductVersion="15.0">
+  <Assemblies>
+    <Assembly Location="ExerciseTemplatePages.dll" DeploymentTarget="GlobalAssemblyCache" />
+  </Assemblies>
+  <FeatureManifests>
+    <FeatureManifest Location="ExerciseTemplatePages_ExercisePages\Feature.xml" />
+  </FeatureManifests>
+</Solution>

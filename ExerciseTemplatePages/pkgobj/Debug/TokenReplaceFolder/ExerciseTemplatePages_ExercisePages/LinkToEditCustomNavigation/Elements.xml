@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomAction
+    Id="editNavigationLink"
+    GroupId="SiteActions"
+    Location="Microsoft.SharePoint.StandardMenu"
+    Sequence="2000"
+    RequireSiteAdministrator="TRUE"
+    Title="Edit Exercise Navigation"
+    Description="Modify existing navigation for this exercise or set it up for the first time">
+    <UrlAction Url="~site/app/EditExerciseNav.aspx"/>
+  </CustomAction>
+</Elements>
