@@ -166,6 +166,7 @@
     <ElementFile Location="WebPartPages\socc.aspx" />
     <ElementFile Location="WebPartPages\sotg1.aspx" />
     <ElementFile Location="WebPartPages\sotg2.aspx" />
+    <ElementFile Location="WebPartPages\cub.aspx" />
     <ElementManifest Location="LinkToEditCustomNavigation\Elements.xml" />
   </ElementManifests>
 </Feature>

@@ -225,6 +225,7 @@
     <Content Include="Application\Assets\js\lib\vex\js\vex.js" />
     <Content Include="Application\Assets\js\lib\vex\js\vex.min.js" />
     <Content Include="Application\WebPartPages\airAssets.aspx" />
+    <Content Include="Application\WebPartPages\cub.aspx" />
     <Content Include="Application\WebPartPages\announce.aspx" />
     <Content Include="Application\WebPartPages\asr.aspx" />
     <Content Include="Application\WebPartPages\comms.aspx" />

@@ -246,6 +246,6 @@
  ]]>
       </View>
     </File>
-    
+    <File Type="GhostableInLibrary" Path="WebPartPages\cub.aspx" Url="app/cub.aspx" />
   </Module>
 </Elements>

@@ -20,5 +20,6 @@
     <ProjectItemFile Source="socc.aspx" Target="WebPartPages\" Type="ElementFile" />
     <ProjectItemFile Source="sotg1.aspx" Target="WebPartPages\" Type="ElementFile" />
     <ProjectItemFile Source="sotg2.aspx" Target="WebPartPages\" Type="ElementFile" />
+    <ProjectItemFile Source="cub.aspx" Target="WebPartPages\" Type="ElementFile" />
   </Files>
 </ProjectItem>
