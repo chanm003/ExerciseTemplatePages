@@ -256,7 +256,7 @@
 	    }
 	}
 
-	function customizeContextMenuForRFIs2010() {
+	function defineCustomActionsForRFIList() {
 	    window.customRfiActions = {
 	        openRfiResponseModal: function (itemId, listUrl) {
 	            var modalUrl = listUrl + '/Respond.aspx?ID=' + itemId;
@@ -274,27 +274,50 @@
 	        }
 	    };
 
-	    window.Custom_AddListMenuItems = function (m, ctx) {
-	        if (ctx.listTemplate !== "10015") {
-	            //when we created list definition inside  Visual Studio used "10015"
-	            return false;
-	        }
 
-	        var status = datacontext.getStatusForRFI_Synch(currentItemID);
-	        if (status === "Open") {
-	            // allow users to respond  
-	            CAMOpt(m, 'Respond to this RFI', 'javascript:customRfiActions.openRfiResponseModal("' + currentItemID + '","' + ctx.listUrlDir + '");');
-	        } else if (status === "Closed") {
-	            // allow users to reopen 
-	            CAMOpt(m, 'Reopen this RFI', 'javascript:customRfiActions.openRfiInsufficientModal("' + currentItemID + '","' + ctx.listUrlDir + '");');
-	        }
-	        
-	        return false; //end function
-	    }
 
 	}
 
-	customizeContextMenuForRFIs2010();
+	function defineCustomActionsForMselList() {
+	    window.customMselActions = {
+	        injectInboundMessage: function (itemId, listUrl) {
+	            alert('datacontext invoke me');
+	        }
+	    };
+
+
+	}
+
+	function addCustomContextMenus() {
+	    window.Custom_AddListMenuItems = function (m, ctx) {
+	        if (ctx.listTemplate === "10015") {
+	            //ListDefinition for RFI used "10015"
+	            var status = datacontext.getStatusForRFI_Synch(currentItemID);
+	            if (status === "Open") {
+	                // allow users to respond  
+	                CAMOpt(m, 'Respond to this RFI', 'javascript:customRfiActions.openRfiResponseModal("' + currentItemID + '","' + ctx.listUrlDir + '");');
+	            } else if (status === "Closed") {
+	                // allow users to reopen 
+	                CAMOpt(m, 'Reopen this RFI', 'javascript:customRfiActions.openRfiInsufficientModal("' + currentItemID + '","' + ctx.listUrlDir + '");');
+	            }
+	        }
+
+	        if (ctx.listTemplate === "10011") {
+	            //ListDefinition for MSEL used "10011"
+	            CAMOpt(m, 'Inject as Inbound Message', 'javascript:customMselActions.injectInboundMessage("' + currentItemID + '","' + ctx.listUrlDir + '");');
+	        }
+
+	        return false; //end function
+	    }
+	}
+
+	function defineCustomActions() {
+	    defineCustomActionsForRFIList();
+	    defineCustomActionsForMselList();
+	    addCustomContextMenus();
+	}
+
+	defineCustomActions();
 
 	//public API    
 	return {

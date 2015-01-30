@@ -40,7 +40,7 @@
     <File Type="GhostableInLibrary" Path="WebPartPages\socc.aspx" Url="app/socc.aspx">
       <View List="Lists/WatchLogSOCC" BaseViewID="1" WebPartZoneID="Top" WebPartOrder="100"></View>
       <View List="Lists/MessageTraffic" BaseViewID="2" WebPartZoneID="Left" WebPartOrder="100"></View>
-      <View List="Lists/MissionTracker" BaseViewID="0" WebPartZoneID="Left" WebPartOrder="200"></View>
+      <View List="Lists/MissionTracker" BaseViewID="1" WebPartZoneID="Left" WebPartOrder="200"></View>
       <View List="Lists/RFI" BaseViewID="4" WebPartZoneID="Left" WebPartOrder="300"></View>
       <View List="SOCC" BaseViewID="1" WebPartZoneID="Right" WebPartOrder="100"></View>
       <View List="Lists/CCIR" BaseViewID="1" WebPartZoneID="Bottom" WebPartOrder="100"></View>
