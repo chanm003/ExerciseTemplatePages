@@ -10,8 +10,10 @@
         getActiveJqueryTabFromUrlHash: getActiveJqueryTabFromUrlHash,
         isSP2010: isSP2010,
         isSP2013: isSP2013,
-        renderWebPartCallToActionButtion:renderWebPartCallToActionButtion,
-        renderWebPartHeaderTag: renderWebPartHeaderTag
+        renderWebPartCallToActionButtion: renderWebPartCallToActionButtion,
+        renderWebPartHeaderTag: renderWebPartHeaderTag,
+        showSuccessNotification: showSuccessNotification,
+        showErrorNotification: showErrorNotification
     }
 
     function addModalBehavior(domContainer, selector) {
@@ -118,7 +120,7 @@
 			btn = hbTemplate({
 			    url: requirejs.spWebURL + webRelativeUrl,
 			    urlText: urlText,
-                urlMutedText: urlMutedText
+			    urlMutedText: urlMutedText
 			});
 
         container.append($(btn));
@@ -151,6 +153,30 @@
         container.append($(webPartHeaderTable));
     }
 
+    function showErrorNotification(title, msg) {
+        //var statusId = SP.UI.Status.addStatus(msg);    
+        //SP.UI.Status.setStatusPriColor(statusId, 'red');
+
+        // create sharepoint notification 
+        var notificationData = new SPStatusNotificationData("", STSHtmlEncode(msg), '_layouts/15/images/gbmrk.gif', null);
+        var notification = new SPNotification(SPNotifications.ContainerID.Status, STSHtmlEncode(title), false, null, null, notificationData);
+
+        // show sharepoint notification tile 
+        notification.Show(false);
+
+    }
+
+    function showSuccessNotification(title, msg) {
+        //var statusId = SP.UI.Status.addStatus(msg);    
+        //SP.UI.Status.setStatusPriColor(statusId, 'green');
+
+        // create sharepoint notification 
+        var notificationData = new SPStatusNotificationData("", STSHtmlEncode(msg), '_layouts/15/images/check2.gif', null);
+        var notification = new SPNotification(SPNotifications.ContainerID.Status, STSHtmlEncode(title), false, null, null, notificationData);
+
+        // show sharepoint notification tile 
+        notification.Show(false);
+    }
 
     return exposedAPI;
 });

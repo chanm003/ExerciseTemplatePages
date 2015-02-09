@@ -3,6 +3,7 @@
     //dependencies
     var $ = require('jquery'),
         _ = require('underscore'),
+        moment = require('moment'),
         spServices = require('spServices');
 
     var schemas = {
@@ -211,7 +212,7 @@
                     <FieldRef Name='ResolutionDate' />\
 	    		</ViewFields>",
             jsonMapping: {
-                ows_ID: { mappedName: "id", objectType: "Counter" }, 
+                ows_ID: { mappedName: "id", objectType: "Counter" },
                 ows_Title: { mappedName: "title", objectType: "Text" },
                 ows_Created: { mappedName: "created", objectType: "DateTime" },
                 ows_Modified: { mappedName: "modified", objectType: "DateTime" },
@@ -318,6 +319,31 @@
                 ows_ExpectedTermination: { mappedName: "expectedTermination", objectType: "DateTime" },
                 ows_SOTG: { mappedName: "sotg", objectType: "Text" },
                 ows_Comments: { mappedName: "comments", objectType: "Text" }
+            }
+        },
+        msel: {
+            camlViewFields:
+                "<ViewFields>\
+					<FieldRef Name='ID' />\
+                    <FieldRef Name='Title' />\
+                    <FieldRef Name='Created' />\
+                    <FieldRef Name='Modified' />\
+                    <FieldRef Name='Author' />\
+                    <FieldRef Name='Editor' />\
+                    <FieldRef Name='From' />\
+					<FieldRef Name='Description' />\
+					<FieldRef Name='DateTimeGroup' />\
+                </ViewFields>",
+            jsonMapping: {
+                ows_ID: { mappedName: "id", objectType: "Counter" },
+                ows_Title: { mappedName: "subject", objectType: "Text" },
+                ows_Created: { mappedName: "created", objectType: "DateTime" },
+                ows_Modified: { mappedName: "modified", objectType: "DateTime" },
+                ows_Author: { mappedName: "author", objectType: "User" },
+                ows_Editor: { mappedName: "editor", objectType: "User" },
+                ows_From: { mappedName: "from", objectType: "Text" },
+                ows_Description: { mappedName: "description", objectType: "Text" },
+                ows_DateTimeGroup: { mappedName: "dateTimeGroup", objectType: "DateTime" }
             }
         },
         navigation: {
@@ -432,11 +458,75 @@
         //internal function to remove the forward slash
         _.each(arrayJsonObjects, function (item) {
             for (var prop in item) {
-                if (item[prop] === "N/A") {                  
+                if (item[prop] === "N/A") {
                     item[prop] = "NA";
                 }
             }
         });
+    }
+
+    function copyMessageTrafficIntoMsel(listItemId) {
+        return getMselItem(listItemId)
+        	.then(createInboundMessage)
+        	.then(markMselItemComplete);
+
+        function createInboundMessage(msel) {
+            return $().SPServices({
+                operation: "UpdateListItems",
+                listName: "Message Traffic",
+                batchCmd: "New",
+                valuepairs: [
+	            	["Originator", msel.from],
+	            	["Title", msel.subject],
+	            	["TaskInfo", msel.description],
+	            	["Comments", msel.description],
+	            	["DateTimeGroup", moment(msel.dateTimeGroup).format("YYYY-MM-DDTHH:mm:ss.SSSZZ")],
+	            	["MessageTraffic", "Inbound Message"],
+	            	["Initials", "EXCON"]
+                ]
+            })
+	        .then(function () {
+	            return msel;
+	        });
+
+        }
+
+        function getMselItem(listItemId) {
+            var promise = $().SPServices({
+                operation: "GetListItems",
+                listName: 'MSEL',
+                async: false,
+                CAMLQuery: '<Query><Where><Eq><FieldRef Name="ID"/><Value Type="Counter">' + listItemId + '</Value></Eq></Where></Query>',
+                CAMLViewFields: schemas.msel.camlViewFields
+            }).then(function (xData, status) {
+                var json = $(xData).SPFilterNode("z:row").SPXmlToJson({
+                    mapping: schemas.msel.jsonMapping,
+                    includeAllAttrs: false
+                });
+
+                if (json.length !== 1) {
+                    promise.reject("Error: Could not find MSEL to copy");
+                }
+
+                var mselToBeCopied = json[0];
+                return mselToBeCopied;
+            });
+
+            return promise;
+        }
+
+        function markMselItemComplete(msel) {
+            return $().SPServices({
+                operation: "UpdateListItems",
+                listName: "MSEL",
+                ID: msel.id,
+                valuepairs: [
+	            	["Status", "Complete"],
+	            	["Injected", "Injected into Message Traffic list: " + moment().format("YYYY-MM-DDTHH:mm:ss.SSSZZ")]
+                ]
+            });
+        }
+
     }
 
     function getAirSupportRequests() {
@@ -597,9 +687,9 @@
 			getExerciseCalendar_BattleRhythm(now.format("YYYY-MM-DD")),
             getExerciseCalendar_BattleRhythm(plus24Hours.format("YYYY-MM-DD"))
 		).then(function (todayEv, tomorrowEv) {
-            //combine two data sources
+		    //combine two data sources
 		    var eventsForTodayAndTomorrow = todayEv.concat(tomorrowEv);
-            //remove any duplicates after consolidation
+		    //remove any duplicates after consolidation
 		    eventsForTodayAndTomorrow = _.uniq(eventsForTodayAndTomorrow, false, function (item) {
 		        return item.id;
 		    });
@@ -793,7 +883,7 @@
                 <Where>\
                     <Eq>\
                         <FieldRef Name='DocType'></FieldRef>\
-                        <Value Type='Text'>"+docType+"</Value>\
+                        <Value Type='Text'>"+ docType + "</Value>\
                     </Eq>\
                 </Where>\
             </Query>";
@@ -982,7 +1072,7 @@
         return $dfd;
         */
     }
-   
+
     function getStatusForRFI_Synch(id) {
         var status = "";
         $().SPServices({
@@ -1068,7 +1158,7 @@
         });
         */
     }
-    
+
     function saveNavigation(menuItems) {
         //ASSUMES THAT: there is one and only one list item
         //ASSUMES THAT: the original list item (with List Item ID of 1) was not deleted...it just gets continually updated
@@ -1110,13 +1200,14 @@
 
     //public API    
     return {
+        copyMessageTrafficIntoMsel: copyMessageTrafficIntoMsel,
         getAirSupportRequests: getAirSupportRequests,
         getBattleRhythmForNext24Hours: getExerciseCalendar_Next24Hours,
         getCurentAnnouncements: getAnnouncements_Current,
         getCCIRS: getCCIRS,
         getCommStatuses: getCommStatuses,
         getConopChops: getConopChops,
-        getHelpDeskTickets:  getHelpDeskTickets,
+        getHelpDeskTickets: getHelpDeskTickets,
         getMissionDocuments: getMissionDocuments,
         getMissionDocumentsByType: getMissionDocumentsByType,
         getMissions: getMissions,
