@@ -247,19 +247,7 @@
 							&lt;/H3&gt;
 						&lt;/td&gt;
 						&lt;td width="400px" valign="top" class="ms-formbody"&gt;
-							&lt;xsl:value-of select="@POC" /&gt;
-							
-						&lt;/td&gt;
-					&lt;/tr&gt;
-					&lt;tr&gt;
-						&lt;td width="190px" valign="top" class="ms-formlabel"&gt;
-							&lt;H3 class="ms-standardheader"&gt;
-								&lt;nobr&gt;POC Email&lt;span class="ms-formvalidation"&gt; *&lt;/span&gt;
-								&lt;/nobr&gt;
-							&lt;/H3&gt;
-						&lt;/td&gt;
-						&lt;td width="400px" valign="top" class="ms-formbody"&gt;
-							&lt;xsl:value-of select="@POCEmail" /&gt;
+							&lt;xsl:value-of select="@POC" disable-output-escaping="yes" /&gt;
 							
 						&lt;/td&gt;
 					&lt;/tr&gt;
@@ -663,18 +651,6 @@
 					&lt;tr&gt;
 						&lt;td width="190px" valign="top" class="ms-formlabel"&gt;
 							&lt;H3 class="ms-standardheader"&gt;
-								&lt;nobr&gt;POC Email&lt;span class="ms-formvalidation"&gt; *&lt;/span&gt;
-								&lt;/nobr&gt;
-							&lt;/H3&gt;
-						&lt;/td&gt;
-						&lt;td width="400px" valign="top" class="ms-formbody"&gt;
-							&lt;SharePoint:FormField runat="server" id="ff7{$Pos}" ControlMode="Edit" FieldName="POCEmail" __designer:bind="{ddwrt:DataBind('u',concat('ff7',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@POCEmail')}"/&gt;
-							&lt;SharePoint:FieldDescription runat="server" id="ff7description{$Pos}" FieldName="POCEmail" ControlMode="Edit"/&gt;
-						&lt;/td&gt;
-					&lt;/tr&gt;
-					&lt;tr&gt;
-						&lt;td width="190px" valign="top" class="ms-formlabel"&gt;
-							&lt;H3 class="ms-standardheader"&gt;
 								&lt;nobr&gt;POC Phone&lt;span class="ms-formvalidation"&gt; *&lt;/span&gt;
 								&lt;/nobr&gt;
 							&lt;/H3&gt;
@@ -1028,17 +1004,7 @@
 							&lt;/H3&gt;
 						&lt;/td&gt;
 						&lt;td width="400px" valign="top" class="ms-formbody"&gt;
-							&lt;xsl:value-of select="@POC"/&gt;
-						&lt;/td&gt;
-					&lt;/tr&gt;
-					&lt;tr&gt;
-						&lt;td width="190px" valign="top" class="ms-formlabel"&gt;
-							&lt;H3 class="ms-standardheader"&gt;
-								&lt;nobr&gt;POC Email&lt;/nobr&gt;
-							&lt;/H3&gt;
-						&lt;/td&gt;
-						&lt;td width="400px" valign="top" class="ms-formbody"&gt;
-							&lt;xsl:value-of select="@POCEmail"/&gt;
+							&lt;xsl:value-of select="@POC" disable-output-escaping="yes" /&gt;
 						&lt;/td&gt;
 					&lt;/tr&gt;
 					&lt;tr&gt;
@@ -1470,19 +1436,7 @@
 							&lt;/H3&gt;
 						&lt;/td&gt;
 						&lt;td width="400px" valign="top" class="ms-formbody"&gt;
-							&lt;xsl:value-of select="@POC" /&gt;
-							
-						&lt;/td&gt;
-					&lt;/tr&gt;
-					&lt;tr&gt;
-						&lt;td width="190px" valign="top" class="ms-formlabel"&gt;
-							&lt;H3 class="ms-standardheader"&gt;
-								&lt;nobr&gt;POC Email&lt;span class="ms-formvalidation"&gt; *&lt;/span&gt;
-								&lt;/nobr&gt;
-							&lt;/H3&gt;
-						&lt;/td&gt;
-						&lt;td width="400px" valign="top" class="ms-formbody"&gt;
-							&lt;xsl:value-of select="@POCEmail" /&gt;&amp;#160;
+							&lt;xsl:value-of select="@POC" disable-output-escaping="yes" /&gt;
 							
 						&lt;/td&gt;
 					&lt;/tr&gt;
